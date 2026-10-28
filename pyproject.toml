@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finterm"
+version = "1.0.0"
+description = "Interactive finance workstation for your terminal"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.24", "pandas>=2.0", "scipy>=1.10", "rich>=13.0"]
+
+[project.optional-dependencies]
+live = ["yfinance>=0.2.40"]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+finterm = "finterm.__main__:main"
+
+[tool.setuptools]
+packages = ["finterm"]
